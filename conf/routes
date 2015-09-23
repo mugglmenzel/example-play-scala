@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                       controllers.Application.index
+POST        /sendForm               controllers.Application.sendForm
+
+# REST
+GET         /rest                   controllers.RestController.index
+GET         /rest/dog               controllers.RestController.readDog
+POST        /rest/dog               controllers.RestController.createDog
+GET         /rest/list/:list        controllers.RestController.readListChunked(list)
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file           controllers.Assets.versioned(path="/public", file: Asset)
